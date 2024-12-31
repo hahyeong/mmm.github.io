@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+      <link rel="stylesheet" href="..\css\style_sidebar.css" />
+      <link rel="stylesheet" href="..\css\style_loggingSection.css" />
+      <link rel="stylesheet" href="..\css\style_monthly.css" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+      <script src="..\js\monthly.js"></script>
+   </head>
+   <body>
+      <!-- sideBar Section -->
+      <aside>
+         <div id="sideBar">
+            <nav>
+               <a href="home.html" class="sidebarBtn"
+                  ><span class="material-symbols-outlined"> home </span><span>Home</span></a
+               >
+               <a href="calendar.html" class="sidebarBtn"
+                  ><span class="material-symbols-outlined"> calendar_today </span> <span>Calendar</span></a
+               >
+               <a href="monthly.html" class="sidebarBtn"
+                  ><span class="material-symbols-outlined"> insert_chart </span><span>Monthly</span></a
+               >
+               <a href="yearly.html" class="sidebarBtn">
+                  <span class="material-symbols-outlined"> monitoring </span><span>Yearly</span></a
+               >
+            </nav>
+            <ul id="dropdownMenu" style="visibility: hidden">
+               <li class="dropdownli" id="profileLi">Profile</li>
+               <li class="dropdownli" id="signoutLi">Sign out</li>
+            </ul>
+            <div class="sidebarBtn" id="userProfile">
+               <span class="material-symbols-outlined" style="color: #ffffff"> account_circle </span>
+               <a href="user.html" id="userName">User1</a>
+               <span class="material-symbols-outlined" id="arrowDropUp"> arrow_drop_up </span>
+            </div>
+         </div>
+      </aside>
+
+      <main>
+         <div id="main">
+            <div id="alert" style="display: none">
+               <div id="alertMsg">기록 추가 완료!</div>
+               <span class="material-symbols-outlined" id="closeAlertBtn"> close </span>
+            </div>
+            <div id="title">
+               <a href="monthly.html">Monthly</a>
+               <span class="material-symbols-outlined" id="logAddBtn"> library_add </span>
+            </div>
+            <div class="content-container">
+               <div class="content">
+                  <!-- <div class="chart-title">12월 수입 분석</div> -->
+                  <canvas id="myChart1"></canvas>
+                  <div class="detail-box">오늘은 어디서 제일 뭐가 많고 어디서 제일 뭐가 적고~</div>
+               </div>
+               <div class="content">
+                  <canvas id="myChart2"></canvas>
+                  <div class="detail-box">이달은 어디서 제일 뭐가 많고 어디서 제일 뭐가 적고~</div>
+               </div>
+            </div>
+         </div>
+      </main>
+      <div id="darkenPage" style="display: none"></div>
+
+      <!--logging section-->
+      <aside>
+         <div id="loggingSection" style="display: none">
+            <div id="loggingTitle">
+               <span class="material-symbols-outlined" id="closeLoggingSectionBtn"> close </span>수입/지출 기록하기
+            </div>
+            <form action="" name="loggingForm" onsubmit="success(event)">
+               <!--JS로 오늘 날짜로 기본 선택되도록 변경-->
+               <div class="inputLi"><label class="labelTitle">날짜</label><input type="date" name="logDate" /></div>
+               <div class="inputLi" id="selectIO">
+                  <input type="radio" name="logoType" id="income" style="display: none" />
+                  <label class="radioBtn" for="income">수입</label>
+                  <input type="radio" name="logoType" id="expense" style="display: none" />
+                  <label class="radioBtn" for="expense">지출</label>
+               </div>
+               <div class="inputLi">
+                  <label class="labelTitle">금액</label
+                  ><input
+                     type="text"
+                     id="moneyInput"
+                     placeholder="0"
+                     oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/\d(?=(?:\d{3})+$)/g, '$&,')"
+                     name="logMoney"
+                  />원
+               </div>
+               <!--수입 카테고리-->
+               <div>
+                  <div class="labelTitle">분류</div>
+                  <div class="Category" id="income-category" style="display: none">
+                     <div>
+                        <span class="categoryList"
+                           ><input type="radio" name="logCategory" value="" /> <label for="">급여/월급</label></span
+                        >
+                        <span class="categoryList"
+                           ><input type="radio" name="logCategory" value="" /> <label for="">투자</label></span
+                        >
+                     </div>
+                     <div>
+                        <span class="categoryList"
+                           ><input type="radio" name="logCategory" value="" /> <label for="">금융</label></span
+                        >
+                        <span class="categoryList"
+                           ><input type="radio" name="logCategory" value="" /> <label for="">사업</label></span
+                        >
+                        <span class="categoryList"
+                           ><input type="radio" name="logCategory" value="" /> <label for="">기타</label></span
+                        >
+                     </div>
+                  </div>
+                  <!--지출 카테고리-->
+                  <div class="Category" id="expense-category" style="display: none">
+                     <div>
+                        <span class="categoryList"
+                           ><input type="radio" name="logCategory" value="" /> <label for="">식비</label></span
+                        >
+                        <span class="categoryList"
+                           ><input type="radio" name="logCategory" value="" /> <label for="">주거비</label></span
+                        >
+                        <span class="categoryList"
+                           ><input type="radio" name="logCategory" value="" /> <label for="">생활비</label></span
+                        >
+                     </div>
+                     <div>
+                        <span class="categoryList"
+                           ><input type="radio" name="logCategory" value="" /> <label for="">교통비</label></span
+                        >
+                        <span class="categoryList"
+                           ><input type="radio" name="logCategory" value="" /> <label for="">기타</label></span
+                        >
+                        <span class="categoryList"
+                           ><input type="radio" name="logCategory" value="" /> <label for="">의료/보험</label></span
+                        >
+                     </div>
+                     <div>
+                        <span class="categoryList"
+                           ><input type="radio" name="logCategory" value="" /> <label for="">의류/미용</label></span
+                        >
+                        <span class="categoryList"
+                           ><input type="radio" name="logCategory" value="" /> <label for="">문화/여가</label></span
+                        >
+                     </div>
+                     <div>
+                        <span class="categoryList"
+                           ><input type="radio" name="logCategory" value="" /> <label for="">교육/자기계발</label></span
+                        >
+                        <span class="categoryList"
+                           ><input type="radio" name="logCategory" value="" /> <label for="">교류/친목</label></span
+                        >
+                     </div>
+                  </div>
+               </div>
+               <input type="submit" value="기록하기" id="newLogSubmitBtn" />
+            </form>
+         </div>
+      </aside>
+   </body>
+   <script src="../js/loggingSection.js"></script>
+   <script src="../js/sideBar.js"></script>
+   <script>
+      let myCt1 = document.getElementById('myChart1');
+
+      let myChart1 = new Chart(myCt1, {
+         type: 'doughnut',
+         data: {
+            labels: ['급여/월급', '투자', '금융', '사업', '기타'],
+            datasets: [
+               {
+                  // label: 'Dataset',
+                  data: [60, 15, 15, 5, 5],
+                  backgroundColor: ['#22a7f0', '#a7d5ed', '#e2e2e2', '#e1a692', '#de6e56'],
+               },
+            ],
+         },
+         options: {
+            responsive: false,
+            plugins: {
+               legend: {
+                  position: 'right',
+                  labels: {
+                     font: {
+                        size: 15,
+                     },
+                     // padding: 30,
+                  },
+               },
+            },
+            aspectRatio: 350 / 250,
+         },
+      });
+
+      let myCt2 = document.getElementById('myChart2');
+
+      let myChart2 = new Chart(myCt2, {
+         type: 'doughnut',
+         data: {
+            labels: [
+               '식비',
+               '주거비',
+               '생활비',
+               '교통비',
+               '의료/보험',
+               '교육/자기계발',
+               '교류/친목',
+               '의류/미용',
+               '문화/여가',
+            ],
+            datasets: [
+               {
+                  // label: 'Dataset',
+                  data: [20, 20, 10, 10, 10, 10, 10, 5, 5],
+                  backgroundColor: [
+                     '#1984c5',
+                     '#22a7f0',
+                     '#63bff0',
+                     '#a7d5ed',
+                     '#e2e2e2',
+                     '#e1a692',
+                     '#de6e56',
+                     '#e14b31',
+                     '#c23728',
+                  ],
+               },
+            ],
+         },
+         options: {
+            responsive: false,
+            plugins: {
+               legend: {
+                  position: 'right',
+                  labels: {
+                     font: {
+                        size: 15,
+                     },
+                     // padding: 30,
+                  },
+               },
+            },
+            aspectRatio: 350 / 250,
+         },
+      });
+   </script>
+</html>

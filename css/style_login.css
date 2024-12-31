@@ -1,0 +1,106 @@
+body {
+   background-color: #f8f9fa;
+   margin: 0;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+form {
+   width: 300px;
+   height: 330px;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#title {
+   font-size: 30px;
+   margin-bottom: 10px;
+}
+#subTitle {
+   margin-bottom: 25px;
+   color: rgb(100, 100, 100);
+}
+#idBox,
+#pwBox {
+   position: relative;
+   width: 300px;
+   height: 60px;
+}
+#idInput,
+#pwInput {
+   display: block;
+   width: 278px;
+   height: 48px;
+   border: 0.5px solid #dee2e6;
+   border-radius: 7px;
+   padding: 10px;
+   padding-bottom: 0;
+   padding-left: 16px;
+   font-size: 1rem;
+}
+#idInput {
+   border-bottom-right-radius: 0;
+   border-bottom-left-radius: 0;
+   border-bottom: 0;
+}
+#pwInput {
+   border-top-right-radius: 0;
+   border-top-left-radius: 0;
+}
+#idInput:focus,
+#pwInput:focus {
+   background-color: #c7daf8;
+}
+label {
+   position: absolute;
+   top: 0;
+   z-index: 2;
+   display: inline-block;
+   width: 130px;
+   height: 28px;
+   padding-top: 20px;
+   padding-bottom: 12px;
+   padding-left: 16px;
+}
+label:hover {
+   cursor: text;
+}
+@keyframes slider {
+   0% {
+      transform: translateY(0);
+      font-size: 1em;
+      color: black;
+   }
+   100% {
+      transform: translateY(-20%);
+      font-size: 0.8em;
+      color: grey;
+   }
+}
+.clickedLabel {
+   animation: slider 0.3s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+}
+#wrongMsg {
+   width: 300px;
+   height: 20px;
+   color: red;
+   font-size: 13px;
+   text-align: center;
+   padding-top: 30px;
+   padding-bottom: 20px;
+   visibility: hidden;
+}
+#loginBtn {
+   width: 290px;
+   height: 40px;
+   margin-left: 5px;
+   margin-right: 5px;
+   border: 0;
+   border-radius: 5px;
+   background-color: #3f80ea;
+   color: #fff;
+   font-size: 17px;
+}
+#loginBtn:hover {
+   background-color: #366dc7;
+   cursor: pointer;
+}

@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+* {
+   font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+   background-color: #f8f9fa;
+}
+
+#main {
+   position: absolute;
+   left: 200px;
+   height: 100vh;
+   width: calc(100% - 200px);
+   padding: 40px;
+   padding-top: 20px;
+   box-sizing: border-box;
+   /* background-color: #f8f9fa; */
+}
+#title {
+   background-color: #00ff0000;
+}
+#title a {
+   font-size: 35px;
+   font-weight: 500;
+   letter-spacing: 2px;
+   color: rgb(80, 80, 80);
+   text-decoration: none;
+}
+
+.calendar {
+   width: calc(90% - 200px);
+   max-width: 1200px;
+   min-width: 800px;
+   height: calc(100% - 75px);
+   min-height: 500px;
+   position: relative;
+}
+
+.calendarHeader {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.year-month {
+   font-size: 25px;
+   font-weight: 500;
+   color: rgb(80, 80, 80);
+   letter-spacing: 2px;
+   margin-left: 30px;
+   margin-right: 30px;
+}
+
+.nav-btn {
+   border: none;
+   font-size: 20px;
+   font-weight: 800;
+   color: rgb(80, 80, 80);
+   background-color: transparent;
+   cursor: pointer;
+}
+.days {
+   display: flex;
+   margin: 5px 0 5px;
+   /* border: 1px solid rgb(230, 230, 230); */
+}
+
+.day {
+   width: calc(100% / 7);
+   text-align: center;
+   font-size: 20px;
+   color: rgb(80, 80, 80);
+   /* border: 1px solid rgb(230, 230, 230); */
+}
+
+.dates {
+   width: 100%;
+   display: flex;
+   flex-flow: row wrap;
+   height: calc(100% - 80px);
+   border: 1px solid rgb(230, 230, 230);
+}
+
+.date {
+   box-sizing: border-box;
+   width: calc(100% / 7);
+   height: calc(100% / 5);
+   border: 1px solid rgb(230, 230, 230);
+   padding: 5px;
+   font-size: 1em;
+   position: relative;
+   background-color: transparent;
+}
+
+.other {
+   opacity: 0.3;
+}
+
+.today {
+   position: relative;
+   color: #ffffff;
+   z-index: 1;
+}
+
+.today::before {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: -1;
+   width: 2em;
+   height: 2em;
+   display: block;
+   background-color: #79a4eb;
+   border-radius: 50%;
+   content: '';
+}
+.calendar-log {
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   font-size: 1em;
+   margin: 2%;
+   letter-spacing: 2px;
+}
+.income {
+   color: #3f80ea;
+   font-weight: 500;
+}
+.expense {
+   color: rgb(236, 93, 93);
+   font-weight: 500;
+}
+.income:hover,
+.expense:hover {
+   cursor: pointer;
+   text-decoration: underline;
+}
+.log-detail {
+   /* background-color: white; */
+   position: absolute;
+   top: 80px;
+   left: 105%;
+   width: 250px;
+   height: calc(100% - 80px);
+   padding: 10px;
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.log-date {
+   font-size: 1.3em;
+   letter-spacing: 2px;
+   color: white;
+   font-weight: 500;
+   background-color: #79a4eb;
+   height: fit-content;
+   border-radius: 20px;
+   padding: 10px;
+   padding-left: 15px;
+   padding-right: 15px;
+}
+.log-main {
+   margin-top: 20px;
+}
+.log-detail-line span {
+   font-size: 1.2em;
+   font-weight: 500;
+   color: rgb(80, 80, 80);
+   letter-spacing: 2px;
+   margin-left: 5px;
+   margin-right: 5px;
+   width: 50px;
+   display: inline-block;
+}
+.log-detail-line .income {
+   color: #3f80ea;
+   width: 110px;
+   text-align: end;
+}
+.log-detail-line .expense {
+   color: rgb(236, 93, 93);
+   width: 110px;
+   text-align: end;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+      <link rel="stylesheet" href="..\css\style_sidebar.css" />
+      <link rel="stylesheet" href="..\css\style_user.css" />
+   </head>
+   <body>
+      <aside>
+         <div id="sideBar">
+            <nav>
+               <a href="home.html" class="sidebarBtn"
+                  ><span class="material-symbols-outlined"> home </span><span>Home</span></a
+               >
+               <a href="calendar.html" class="sidebarBtn"
+                  ><span class="material-symbols-outlined"> calendar_today </span> <span>Calendar</span></a
+               >
+               <a href="monthly.html" class="sidebarBtn"
+                  ><span class="material-symbols-outlined"> insert_chart </span><span>Monthly</span></a
+               >
+               <a href="yearly.html" class="sidebarBtn">
+                  <span class="material-symbols-outlined"> monitoring </span><span>Yearly</span></a
+               >
+            </nav>
+            <ul id="dropdownMenu" style="visibility: hidden">
+               <li class="dropdownli" id="profileLi">Profile</li>
+               <li class="dropdownli" id="signoutLi">Sign out</li>
+            </ul>
+            <div class="sidebarBtn" id="userProfile">
+               <span class="material-symbols-outlined" style="color: #ffffff"> account_circle </span>
+               <a href="user.html" id="userName">User1</a>
+               <span class="material-symbols-outlined" id="arrowDropUp"> arrow_drop_up </span>
+            </div>
+         </div>
+      </aside>
+
+      <div id="main">
+         <div id="title"><a href="user.html">My Page</a></div>
+      </div>
+   </body>
+   <script src="../js/sideBar.js"></script>
+   <script></script>
+</html>

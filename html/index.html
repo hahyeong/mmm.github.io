@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <link rel="stylesheet" href="..\css\style_login.css" />
+   </head>
+   <body>
+      <form action="home.html">
+         <div id="title">Please sign in</div>
+         <div id="subTitle">Welcome to our service</div>
+         <div id="idBox"><input type="text" id="idInput" /><label for="idInput" id="idLabel">Username</label></div>
+         <div id="pwBox"><input type="password" id="pwInput" /><label for="pwInput" id="pwLabel">Password</label></div>
+         <div id="wrongMsg">Please check your username and password!</div>
+         <input type="submit" value="Sign in" id="loginBtn" />
+      </form>
+   </body>
+   <script>
+      let form = document.getElementsByTagName('form')[0];
+      form.addEventListener('submit', e => {
+         let id = document.getElementById('idInput').value;
+         let pw = document.getElementById('pwInput').value;
+         if (id != 'hello' || pw != '12345') {
+            e.preventDefault();
+            document.getElementById('wrongMsg').style.visibility = 'visible';
+         }
+      });
+      let idInput = document.getElementById('idInput');
+      let idLabel = document.getElementById('idLabel');
+      idInput.addEventListener('focus', () => {
+         idLabel.classList.add('clickedLabel');
+      });
+      idInput.addEventListener('blur', () => {
+         if (idInput.value == '') idLabel.classList.remove('clickedLabel');
+      });
+      let pwInput = document.getElementById('pwInput');
+      let pwLabel = document.getElementById('pwLabel');
+      pwInput.addEventListener('focus', () => {
+         pwLabel.classList.add('clickedLabel');
+      });
+      pwInput.addEventListener('blur', () => {
+         if (pwInput.value == '') pwLabel.classList.remove('clickedLabel');
+      });
+   </script>
+</html>

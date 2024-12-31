@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+* {
+   font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+   margin: 0;
+   height: 100vh;
+}
+#sideBar {
+   box-sizing: border-box;
+   width: 200px;
+   height: 100vh;
+   position: absolute;
+   left: 0;
+   top: 0;
+   background-color: #3f80ea;
+   padding-top: 50px;
+}
+
+.sidebarBtn {
+   display: block;
+   height: 25px;
+   display: flex;
+   align-items: center;
+   margin: 30px;
+   color: rgba(244, 247, 249, 0.7);
+   text-decoration: none;
+   font-size: 20px;
+}
+.sidebarBtn:hover * {
+   color: #ffffff;
+}
+.material-symbols-outlined {
+   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+   color: rgba(244, 247, 249, 0.7);
+   font-size: 25px;
+   margin-right: 15px;
+}
+#userProfile {
+   position: absolute;
+   bottom: 0;
+   display: flex;
+   align-items: center;
+   height: 35px;
+   width: 140px;
+   margin-top: 15px;
+}
+#userName {
+   color: #ffffff;
+   text-decoration: none;
+   font-size: 20px;
+   padding: 0;
+   width: 55px;
+}
+#arrowDropUp {
+   background-color: #ffffff00;
+   border: 0;
+   color: #ffffff;
+   font-size: 35px;
+   margin: 0;
+}
+#arrowDropUp:hover {
+   cursor: pointer;
+}
+#dropdownMenu {
+   background-color: #ffffff;
+   position: absolute;
+   bottom: 60px;
+   left: 130px;
+   list-style-type: none;
+   padding: 0px;
+   border: 1px solid rgb(200, 200, 200);
+   border-radius: 5px;
+   z-index: 10;
+}
+.dropdownli {
+   background-color: #ffffff;
+   font-size: 15px;
+   width: 70px;
+   padding: 10px;
+   color: rgb(90, 90, 90);
+}
+.dropdownli:hover {
+   background-color: #dde5f0;
+   cursor: pointer;
+}
+#profileLi {
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+   padding-bottom: 5px;
+}
+#signoutLi {
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+   padding-top: 5px;
+}
