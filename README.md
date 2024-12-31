@@ -14,7 +14,7 @@ MMM, My Money Manager는 사용자가 가계부를 작성하면 해당 데이터
 로그인에 실패하는 경우 로그인 창 아래에 메시지가 표시됩니다.<br>
 <br><br><br>
 ### Dashboard 페이지
-![image](https://github.com/user-attachments/assets/a90e94ed-8a3c-46c0-8eff-d8f30c2a8b11)
+![image](https://github.com/user-attachments/assets/dabdeec8-5619-4910-ab3d-ef6425b23dbf)
 <br><br>
 로그인에 성공하는 경우 dashboard 페이지로 이동하게 됩니다. 여기에서는 오늘의 수입과 지출, 이번 달의 수입과 지출을 한 눈에 볼 수 있습니다. <br>
 또한 왼쪽의 사이드 바를 통해 페이지 이동이 가능하며, 왼쪽 사이드 바의 경우 Login 페이지를 제외한 모든 페이지에 존재합니다.<br>
